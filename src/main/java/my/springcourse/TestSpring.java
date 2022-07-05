@@ -2,11 +2,24 @@ package my.springcourse;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestSpring {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        MusicPlayer musicPlayer = appContext.getBean("musicPlayer", MusicPlayer.class);
+        PopMusic popMusic               = appContext.getBean("somePopMusic", PopMusic.class);
+        ClassicalMusic classicalMusic   = appContext.getBean("classicalMusic", ClassicalMusic.class);
+        RockMusic rockMusic             = appContext.getBean("rockMusic", RockMusic.class);
+
+        List<Music> playlist = new ArrayList<>();
+        playlist.add(popMusic);
+        playlist.add(classicalMusic);
+        playlist.add(rockMusic);
+
+        MusicPlayer musicPlayer = new MusicPlayer(playlist);
+
 
         System.out.println("Name: " + musicPlayer.getName());
         System.out.println("Volume: " + musicPlayer.getVolume());

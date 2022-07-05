@@ -1,9 +1,11 @@
 package my.springcourse;
 
+import org.springframework.stereotype.Component;
+
+@Component("somePopMusic")
 public class PopMusic implements Music{
 
     private PopMusic(){
-
     }
 
     public static PopMusic createPopMusic(){
