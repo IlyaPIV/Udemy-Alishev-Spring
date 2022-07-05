@@ -19,8 +19,11 @@
           class="my.springcourse.ClassicalMusic"/>
 
     <bean id="musicPlayer"
-            class="my.springcourse.MusicPlayer">
+            class="my.springcourse.MusicPlayer"
+                scope="prototype">
 <!--        <constructor-arg ref="musicBean"/>-->
+
+
         <property name="music">
             <list>
                 <ref bean="popBean"/>
