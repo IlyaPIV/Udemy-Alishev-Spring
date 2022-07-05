@@ -10,13 +10,19 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="rockBean"
-          class="my.springcourse.RockMusic">
+          class="my.springcourse.RockMusic"
+            factory-method="createRockMusic">
 <!--        <constructor-arg value="Neil"/>-->
     </bean>
     <bean id="popBean"
-          class="my.springcourse.PopMusic"/>
+          class="my.springcourse.PopMusic"
+            factory-method="createPopMusic"/>
+
     <bean id="classicBean"
-          class="my.springcourse.ClassicalMusic"/>
+          class="my.springcourse.ClassicalMusic"
+            init-method="doMyInit"
+            destroy-method="doMyDestroy"
+            factory-method="createClassicalMusic"/>
 
     <bean id="musicPlayer"
             class="my.springcourse.MusicPlayer"

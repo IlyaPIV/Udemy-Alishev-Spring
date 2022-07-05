@@ -15,7 +15,7 @@ public class TestSpring {
         MusicPlayer firstPlayer = appContext.getBean("musicPlayer", MusicPlayer.class);
         MusicPlayer secondPlayer = appContext.getBean("musicPlayer", MusicPlayer.class);
         System.out.println();
-        System.out.println(firstPlayer.toString() + "\t?\t" + secondPlayer.toString() + "\t=\t" + (firstPlayer==secondPlayer));
+        System.out.println(firstPlayer + "\t?\t" + secondPlayer + "\t=\t" + (firstPlayer==secondPlayer));
 
         appContext.close();
     }
