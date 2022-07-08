@@ -2,8 +2,14 @@ package my.springcourse;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component
 public class RockMusic implements Music{
+
+    String[] songs = {"It's my life",
+                        "Wind cries Mary",
+                        "Thunderstruck"};
 
     private RockMusic(){
     }
@@ -14,6 +20,7 @@ public class RockMusic implements Music{
 
     @Override
     public String getSong() {
-        return "Wind cries Mary";
+        Random rnd = new Random();
+        return songs[rnd.nextInt(songs.length)];
     }
 }

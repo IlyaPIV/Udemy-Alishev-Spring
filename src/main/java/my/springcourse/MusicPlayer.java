@@ -1,6 +1,7 @@
 package my.springcourse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,14 +12,17 @@ public class MusicPlayer {
     //private List<Music> music = new ArrayList<>();
 
     @Autowired
-    private PopMusic music;
-    private ClassicalMusic classicalMusic;
-    private RockMusic rockMusic;
+    @Qualifier("somePopMusic")
+    private Music popMusic;
+    @Qualifier("classicalMusic")
+    private Music classicalMusic;
+    @Qualifier("rockMusic")
+    private Music rockMusic;
 
     private int volume;
     private String name;
 
-    // IoC
+
 //    public MusicPlayer(List<Music> music){
 //        this.music = music;
 //    }
@@ -28,7 +32,7 @@ public class MusicPlayer {
 //    }
 
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+    public MusicPlayer(@Qualifier("classicalMusic") Music classicalMusic, @Qualifier("rockMusic") Music rockMusic) {
         this.classicalMusic = classicalMusic;
         this.rockMusic = rockMusic;
     }
@@ -60,13 +64,15 @@ public class MusicPlayer {
         this.name = name;
     }
 
-    public String playMusic(){
-//        for (Music track:
-//             music) {
-//            System.out.println("Playing: " + track.getSong());
-//        }
-        return "Playing: " + music.getSong() +
-                "\nPlaying: " + rockMusic.getSong() +
-                "\nPlaying: " + classicalMusic.getSong();
+    public String playMusic(Genre genre){
+        String song = "";
+        switch (genre){
+            case POP: song = "Playing pop: " + popMusic.getSong();
+                        break;
+            case ROCK: song = "Playing rock: " + rockMusic.getSong();
+                        break;
+            default: song = "Playing classic: " + classicalMusic.getSong();
+        }
+        return song;
     }
 }

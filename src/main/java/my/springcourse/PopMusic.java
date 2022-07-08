@@ -2,8 +2,14 @@ package my.springcourse;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Random;
+
 @Component("somePopMusic")
 public class PopMusic implements Music{
+
+    String[] songs = {"Bye bye bye!",
+                        "Gangnamstyle!",
+                        "I like to move it!"};
 
     private PopMusic(){
     }
@@ -14,6 +20,7 @@ public class PopMusic implements Music{
 
     @Override
     public String getSong() {
-        return "Bye bye bye!";
+        Random rnd = new Random();
+        return songs[rnd.nextInt(songs.length)];
     }
 }
