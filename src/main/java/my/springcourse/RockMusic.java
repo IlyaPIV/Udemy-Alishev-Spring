@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
-@Component
+
 @Scope("prototype")
 public class RockMusic implements Music{
 

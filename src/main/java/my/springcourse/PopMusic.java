@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
-@Component("somePopMusic")
+
 @Scope("prototype")
 public class PopMusic implements Music{
 
@@ -13,7 +13,7 @@ public class PopMusic implements Music{
                         "Gangnamstyle!",
                         "I like to move it!"};
 
-    private PopMusic(){
+    public PopMusic(){
     }
 
     public static PopMusic createPopMusic(){

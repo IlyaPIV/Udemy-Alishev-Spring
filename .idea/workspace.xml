@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12420a28-00ea-46a4-bc84-77219141526e" name="Changes" comment="Lesson #10 - @Autowired">
+    <list default="true" id="12420a28-00ea-46a4-bc84-77219141526e" name="Changes" comment="Lesson #12 - @Scope, @Value, @PostConstruct, @PreDestroy">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/springcourse/ClassicalMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/springcourse/ClassicalMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/my/springcourse/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/springcourse/Computer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/springcourse/MusicPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/springcourse/MusicPlayer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/springcourse/PopMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/springcourse/PopMusic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/my/springcourse/RockMusic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/springcourse/RockMusic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/my/springcourse/TestSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/my/springcourse/TestSpring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -92,7 +94,7 @@
       <workItem from="1657291172188" duration="431000" />
       <workItem from="1657291618248" duration="862000" />
       <workItem from="1657304869646" duration="600000" />
-      <workItem from="1657368308109" duration="1025000" />
+      <workItem from="1657368308109" duration="3555000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1656910679353</created>
@@ -150,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657220076950</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Lesson #12 - @Scope, @Value, @PostConstruct, @PreDestroy">
+      <created>1657369506625</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1657369506625</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +184,7 @@
     <MESSAGE value="Lesson #8" />
     <MESSAGE value="Lesson #9" />
     <MESSAGE value="Lesson #10 - @Autowired" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lesson #10 - @Autowired" />
+    <MESSAGE value="Lesson #12 - @Scope, @Value, @PostConstruct, @PreDestroy" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson #12 - @Scope, @Value, @PostConstruct, @PreDestroy" />
   </component>
 </project>

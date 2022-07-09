@@ -9,13 +9,12 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 @Scope("singleton")
 public class MusicPlayer {
-    //private List<Music> music = new ArrayList<>();
+    private List<Music> music = new ArrayList<>();
 
-    @Autowired
-    @Qualifier("somePopMusic")
+
+
     private Music popMusic;
     @Qualifier("classicalMusic")
     private Music classicalMusic;
@@ -28,19 +27,20 @@ public class MusicPlayer {
     private String name;
 
 
-//    public MusicPlayer(List<Music> music){
-//        this.music = music;
-//    }
+    public MusicPlayer(List<Music> music){
+        this.music = music;
+    }
 //    @Autowired
 //    public MusicPlayer(Music music){
 //        this.music = music;
 //    }
 
-    @Autowired
-    public MusicPlayer(@Qualifier("classicalMusic") Music classicalMusic, @Qualifier("rockMusic") Music rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
-    }
+
+//    public MusicPlayer(@Qualifier("classicalMusic") Music classicalMusic, @Qualifier("rockMusic") Music rockMusic, @Qualifier("popMusic") Music popMusic) {
+//        this.classicalMusic = classicalMusic;
+//        this.rockMusic = rockMusic;
+//        this.popMusic = popMusic;
+//    }
 
     public MusicPlayer() {
     }
@@ -79,5 +79,14 @@ public class MusicPlayer {
             default: song = song + "Playing classic: " + classicalMusic.getSong();
         }
         return song;
+    }
+
+    public String playMusic(){
+        StringBuilder sb = new StringBuilder();
+        for (Music track:
+             music) {
+            sb.append("- ").append(track.getSong()).append(";\n");
+        }
+        return String.format("Player %s on volume %d is playing: \n" + sb.toString(), name, volume);
     }
 }
