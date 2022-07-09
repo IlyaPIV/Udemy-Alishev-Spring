@@ -2,12 +2,15 @@ package my.springcourse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Scope("singleton")
 public class MusicPlayer {
     //private List<Music> music = new ArrayList<>();
 
@@ -19,7 +22,9 @@ public class MusicPlayer {
     @Qualifier("rockMusic")
     private Music rockMusic;
 
+    @Value("${musicPlayer.volume}")
     private int volume;
+    @Value("${musicPlayer.name}")
     private String name;
 
 
@@ -65,13 +70,13 @@ public class MusicPlayer {
     }
 
     public String playMusic(Genre genre){
-        String song = "";
+        String song = String.format("Player %s on volume %d - ", name, volume);
         switch (genre){
-            case POP: song = "Playing pop: " + popMusic.getSong();
+            case POP: song = song + "Playing pop: " + popMusic.getSong();
                         break;
-            case ROCK: song = "Playing rock: " + rockMusic.getSong();
+            case ROCK: song = song + "Playing rock: " + rockMusic.getSong();
                         break;
-            default: song = "Playing classic: " + classicalMusic.getSong();
+            default: song = song + "Playing classic: " + classicalMusic.getSong();
         }
         return song;
     }
